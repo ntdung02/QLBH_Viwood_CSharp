@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9fd38e0af97b4461a89df89e37ee7bef" Name="Diagram1" ZoomLevel="69">
+        <EntityTypeShape EntityType="DB_QLCH_02Model.CTDonDatHang" Width="1.5" PointX="5.5" PointY="0.875" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.CTNhapHang" Width="1.5" PointX="8.125" PointY="3.375" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.CTHoaDon" PointX="8.25" PointY="1" Width="1.5" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.DonDatHang" Width="1.5" PointX="7.125" PointY="6.5" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.HoaDon" Width="1.5" PointX="10.125" PointY="1.5" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.KhachHang" Width="1.5" PointX="5" PointY="6.625" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.NhaCungCap" Width="1.5" PointX="2.875" PointY="6.75" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.NhanVien" Width="1.5" PointX="9.25" PointY="5.875" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.NhapHang" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.Nhom" Width="1.5" PointX="3.125" PointY="0.625" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.PhongBan" Width="1.5" PointX="11" PointY="4.375" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.SanPham" Width="1.5" PointX="3.25" PointY="2.75" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.vw_DSChiTietDonDatHang" Width="1.5" PointX="26.625" PointY="7.5" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.vw_DSDonDatHang" Width="1.5" PointX="26.625" PointY="6.375" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.vw_DSNhapHang" Width="1.5" PointX="26.875" PointY="7.75" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ctddh_MaDonDat" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ctddh_MaSP" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ctnh_MaNhapHang" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ctnh_MaSP" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_cthd_MaHoaDon" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_cthd_MaSP" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ddh_MaKH" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_ddh_MaNV" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_hd_MaDonDat" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_hd_MaNV" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_nh_MaNCC" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_sp_MaNCC" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_nv_mpb" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_nh_MaNV" />
+        <AssociationConnector Association="DB_QLCH_02Model.fk_MaNhom" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.vw_DSCTNhapHang" Width="1.5" PointX="26.625" PointY="9" />
+        <EntityTypeShape EntityType="DB_QLCH_02Model.vw_DSHoaDon" Width="1.5" PointX="26.75" PointY="8.625" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

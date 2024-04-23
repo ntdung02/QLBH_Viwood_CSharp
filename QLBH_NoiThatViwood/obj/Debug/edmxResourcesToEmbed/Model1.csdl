@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_QLCH_02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DB_QLCH_02Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CTDonDatHang" EntityType="DB_QLCH_02Model.CTDonDatHang" />
+    <EntitySet Name="CTNhapHang" EntityType="DB_QLCH_02Model.CTNhapHang" />
+    <EntitySet Name="CTHoaDon" EntityType="DB_QLCH_02Model.CTHoaDon" />
+    <EntitySet Name="DonDatHang" EntityType="DB_QLCH_02Model.DonDatHang" />
+    <EntitySet Name="HoaDon" EntityType="DB_QLCH_02Model.HoaDon" />
+    <EntitySet Name="KhachHang" EntityType="DB_QLCH_02Model.KhachHang" />
+    <EntitySet Name="NhaCungCap" EntityType="DB_QLCH_02Model.NhaCungCap" />
+    <EntitySet Name="NhanVien" EntityType="DB_QLCH_02Model.NhanVien" />
+    <EntitySet Name="NhapHang" EntityType="DB_QLCH_02Model.NhapHang" />
+    <EntitySet Name="Nhom" EntityType="DB_QLCH_02Model.Nhom" />
+    <EntitySet Name="PhongBan" EntityType="DB_QLCH_02Model.PhongBan" />
+    <EntitySet Name="SanPham" EntityType="DB_QLCH_02Model.SanPham" />
+    <EntitySet Name="vw_DSChiTietDonDatHang" EntityType="DB_QLCH_02Model.vw_DSChiTietDonDatHang" />
+    <EntitySet Name="vw_DSDonDatHang" EntityType="DB_QLCH_02Model.vw_DSDonDatHang" />
+    <EntitySet Name="vw_DSNhapHang" EntityType="DB_QLCH_02Model.vw_DSNhapHang" />
+    <AssociationSet Name="fk_ctddh_MaDonDat" Association="DB_QLCH_02Model.fk_ctddh_MaDonDat">
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+      <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctddh_MaSP" Association="DB_QLCH_02Model.fk_ctddh_MaSP">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="CTDonDatHang" EntitySet="CTDonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctnh_MaNhapHang" Association="DB_QLCH_02Model.fk_ctnh_MaNhapHang">
+      <End Role="NhapHang" EntitySet="NhapHang" />
+      <End Role="CTNhapHang" EntitySet="CTNhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctnh_MaSP" Association="DB_QLCH_02Model.fk_ctnh_MaSP">
+      <End Role="SanPham" EntitySet="SanPham" />
+      <End Role="CTNhapHang" EntitySet="CTNhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cthd_MaHoaDon" Association="DB_QLCH_02Model.fk_cthd_MaHoaDon">
+      <End EntitySet="HoaDon" Role="HoaDon" />
+      <End EntitySet="CTHoaDon" Role="CTHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_cthd_MaSP" Association="DB_QLCH_02Model.fk_cthd_MaSP">
+      <End EntitySet="SanPham" Role="SanPham" />
+      <End EntitySet="CTHoaDon" Role="CTHoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ddh_MaKH" Association="DB_QLCH_02Model.fk_ddh_MaKH">
+      <End Role="KhachHang" EntitySet="KhachHang" />
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ddh_MaNV" Association="DB_QLCH_02Model.fk_ddh_MaNV">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hd_MaDonDat" Association="DB_QLCH_02Model.fk_hd_MaDonDat">
+      <End Role="DonDatHang" EntitySet="DonDatHang" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_hd_MaNV" Association="DB_QLCH_02Model.fk_hd_MaNV">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="HoaDon" EntitySet="HoaDon" />
+    </AssociationSet>
+    <AssociationSet Name="fk_nh_MaNCC" Association="DB_QLCH_02Model.fk_nh_MaNCC">
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
+      <End Role="NhapHang" EntitySet="NhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_sp_MaNCC" Association="DB_QLCH_02Model.fk_sp_MaNCC">
+      <End Role="NhaCungCap" EntitySet="NhaCungCap" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <AssociationSet Name="fk_nv_mpb" Association="DB_QLCH_02Model.fk_nv_mpb">
+      <End Role="PhongBan" EntitySet="PhongBan" />
+      <End Role="NhanVien" EntitySet="NhanVien" />
+    </AssociationSet>
+    <AssociationSet Name="fk_nh_MaNV" Association="DB_QLCH_02Model.fk_nh_MaNV">
+      <End Role="NhanVien" EntitySet="NhanVien" />
+      <End Role="NhapHang" EntitySet="NhapHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MaNhom" Association="DB_QLCH_02Model.fk_MaNhom">
+      <End Role="Nhom" EntitySet="Nhom" />
+      <End Role="SanPham" EntitySet="SanPham" />
+    </AssociationSet>
+    <EntitySet Name="vw_DSCTNhapHang" EntityType="DB_QLCH_02Model.vw_DSCTNhapHang" />
+    <EntitySet Name="vw_DSHoaDon" EntityType="DB_QLCH_02Model.vw_DSHoaDon" />
+  </EntityContainer>
+  <EntityType Name="CTDonDatHang">
+    <Key>
+      <PropertyRef Name="MaDonDat" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuongDat" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DonDatHang" Relationship="DB_QLCH_02Model.fk_ctddh_MaDonDat" FromRole="CTDonDatHang" ToRole="DonDatHang" />
+    <NavigationProperty Name="SanPham" Relationship="DB_QLCH_02Model.fk_ctddh_MaSP" FromRole="CTDonDatHang" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="CTNhapHang">
+    <Key>
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="MaNhapHang" />
+    </Key>
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaNhapHang" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NhapHang" Relationship="DB_QLCH_02Model.fk_ctnh_MaNhapHang" FromRole="CTNhapHang" ToRole="NhapHang" />
+    <NavigationProperty Name="SanPham" Relationship="DB_QLCH_02Model.fk_ctnh_MaSP" FromRole="CTNhapHang" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="CTHoaDon">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaHoaDon" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="MaSP" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" Type="String" />
+    <Property Name="SoLuong" Nullable="false" Type="Int32" />
+    <Property Name="ThanhTien" Nullable="false" Type="Int32" />
+    <NavigationProperty Name="HoaDon" Relationship="DB_QLCH_02Model.fk_cthd_MaHoaDon" FromRole="CTHoaDon" ToRole="HoaDon" />
+    <NavigationProperty Name="SanPham" Relationship="DB_QLCH_02Model.fk_cthd_MaSP" FromRole="CTHoaDon" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="DonDatHang">
+    <Key>
+      <PropertyRef Name="MaDonDat" />
+    </Key>
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaKH" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="MaNV" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CTDonDatHang" Relationship="DB_QLCH_02Model.fk_ctddh_MaDonDat" FromRole="DonDatHang" ToRole="CTDonDatHang" />
+    <NavigationProperty Name="KhachHang" Relationship="DB_QLCH_02Model.fk_ddh_MaKH" FromRole="DonDatHang" ToRole="KhachHang" />
+    <NavigationProperty Name="NhanVien" Relationship="DB_QLCH_02Model.fk_ddh_MaNV" FromRole="DonDatHang" ToRole="NhanVien" />
+    <NavigationProperty Name="HoaDon" Relationship="DB_QLCH_02Model.fk_hd_MaDonDat" FromRole="DonDatHang" ToRole="HoaDon" />
+  </EntityType>
+  <EntityType Name="HoaDon">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+    </Key>
+    <Property Name="MaHoaDon" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="TongTien" Type="Int64" Nullable="false" />
+    <Property Name="MaNV" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CTHoaDon" Relationship="DB_QLCH_02Model.fk_cthd_MaHoaDon" FromRole="HoaDon" ToRole="CTHoaDon" />
+    <NavigationProperty Name="DonDatHang" Relationship="DB_QLCH_02Model.fk_hd_MaDonDat" FromRole="HoaDon" ToRole="DonDatHang" />
+    <NavigationProperty Name="NhanVien" Relationship="DB_QLCH_02Model.fk_hd_MaNV" FromRole="HoaDon" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="KhachHang">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="HoTenKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SDTKH" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="EmailKH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinhKH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DonDatHang" Relationship="DB_QLCH_02Model.fk_ddh_MaKH" FromRole="KhachHang" ToRole="DonDatHang" />
+  </EntityType>
+  <EntityType Name="NhaCungCap">
+    <Key>
+      <PropertyRef Name="MaNCC" />
+    </Key>
+    <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChiNCC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoaiNCC" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EmailNCC" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhapHang" Relationship="DB_QLCH_02Model.fk_nh_MaNCC" FromRole="NhaCungCap" ToRole="NhapHang" />
+    <NavigationProperty Name="SanPham" Relationship="DB_QLCH_02Model.fk_sp_MaNCC" FromRole="NhaCungCap" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="NhanVien">
+    <Key>
+      <PropertyRef Name="MaNV" />
+    </Key>
+    <Property Name="MaNV" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GioiTinh" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MaPB" Type="Int32" Nullable="false" />
+    <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DonDatHang" Relationship="DB_QLCH_02Model.fk_ddh_MaNV" FromRole="NhanVien" ToRole="DonDatHang" />
+    <NavigationProperty Name="HoaDon" Relationship="DB_QLCH_02Model.fk_hd_MaNV" FromRole="NhanVien" ToRole="HoaDon" />
+    <NavigationProperty Name="PhongBan" Relationship="DB_QLCH_02Model.fk_nv_mpb" FromRole="NhanVien" ToRole="PhongBan" />
+    <NavigationProperty Name="NhapHang" Relationship="DB_QLCH_02Model.fk_nh_MaNV" FromRole="NhanVien" ToRole="NhapHang" />
+  </EntityType>
+  <EntityType Name="NhapHang">
+    <Key>
+      <PropertyRef Name="MaNhapHang" />
+    </Key>
+    <Property Name="MaNhapHang" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="MaNV" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TongTien" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CTNhapHang" Relationship="DB_QLCH_02Model.fk_ctnh_MaNhapHang" FromRole="NhapHang" ToRole="CTNhapHang" />
+    <NavigationProperty Name="NhaCungCap" Relationship="DB_QLCH_02Model.fk_nh_MaNCC" FromRole="NhapHang" ToRole="NhaCungCap" />
+    <NavigationProperty Name="NhanVien" Relationship="DB_QLCH_02Model.fk_nh_MaNV" FromRole="NhapHang" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="Nhom">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TenNhom" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SanPham" Relationship="DB_QLCH_02Model.fk_MaNhom" FromRole="Nhom" ToRole="SanPham" />
+  </EntityType>
+  <EntityType Name="PhongBan">
+    <Key>
+      <PropertyRef Name="MaPB" />
+    </Key>
+    <Property Name="MaPB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenPB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="NhanVien" Relationship="DB_QLCH_02Model.fk_nv_mpb" FromRole="PhongBan" ToRole="NhanVien" />
+  </EntityType>
+  <EntityType Name="SanPham">
+    <Key>
+      <PropertyRef Name="MaSP" />
+    </Key>
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TenSanPham" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongTon" Type="Int32" Nullable="false" />
+    <Property Name="GiaNhap" Type="Double" Nullable="false" />
+    <Property Name="GiaBan" Type="Double" Nullable="false" />
+    <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaNhom" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaNCC" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CTDonDatHang" Relationship="DB_QLCH_02Model.fk_ctddh_MaSP" FromRole="SanPham" ToRole="CTDonDatHang" />
+    <NavigationProperty Name="CTNhapHang" Relationship="DB_QLCH_02Model.fk_ctnh_MaSP" FromRole="SanPham" ToRole="CTNhapHang" />
+    <NavigationProperty Name="CTHoaDon" Relationship="DB_QLCH_02Model.fk_cthd_MaSP" FromRole="SanPham" ToRole="CTHoaDon" />
+    <NavigationProperty Name="NhaCungCap" Relationship="DB_QLCH_02Model.fk_sp_MaNCC" FromRole="SanPham" ToRole="NhaCungCap" />
+    <NavigationProperty Name="Nhom" Relationship="DB_QLCH_02Model.fk_MaNhom" FromRole="SanPham" ToRole="Nhom" />
+  </EntityType>
+  <EntityType Name="vw_DSChiTietDonDatHang">
+    <Key>
+      <PropertyRef Name="MaDonDat" />
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenSanPham" />
+      <PropertyRef Name="SoLuongDat" />
+    </Key>
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TenSanPham" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuongDat" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_DSDonDatHang">
+    <Key>
+      <PropertyRef Name="MaDonDat" />
+      <PropertyRef Name="HoTenKH" />
+      <PropertyRef Name="HoTen" />
+      <PropertyRef Name="TinhTrang" />
+    </Key>
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="HoTenKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TinhTrang" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vw_DSNhapHang">
+    <Key>
+      <PropertyRef Name="MaNhapHang" />
+      <PropertyRef Name="HoTen" />
+      <PropertyRef Name="TenNCC" />
+      <PropertyRef Name="TongTien" />
+    </Key>
+    <Property Name="MaNhapHang" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TenNCC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="TongTien" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_ctddh_MaDonDat">
+    <End Type="DB_QLCH_02Model.DonDatHang" Role="DonDatHang" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.CTDonDatHang" Role="CTDonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang">
+        <PropertyRef Name="MaDonDat" />
+      </Principal>
+      <Dependent Role="CTDonDatHang">
+        <PropertyRef Name="MaDonDat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctddh_MaSP">
+    <End Type="DB_QLCH_02Model.SanPham" Role="SanPham" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.CTDonDatHang" Role="CTDonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTDonDatHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctnh_MaNhapHang">
+    <End Type="DB_QLCH_02Model.NhapHang" Role="NhapHang" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.CTNhapHang" Role="CTNhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhapHang">
+        <PropertyRef Name="MaNhapHang" />
+      </Principal>
+      <Dependent Role="CTNhapHang">
+        <PropertyRef Name="MaNhapHang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctnh_MaSP">
+    <End Type="DB_QLCH_02Model.SanPham" Role="SanPham" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.CTNhapHang" Role="CTNhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTNhapHang">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cthd_MaHoaDon">
+    <End Type="DB_QLCH_02Model.HoaDon" Multiplicity="1" Role="HoaDon" />
+    <End Type="DB_QLCH_02Model.CTHoaDon" Multiplicity="*" Role="CTHoaDon" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDon">
+        <PropertyRef Name="MaHoaDon" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="MaHoaDon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_cthd_MaSP">
+    <End Type="DB_QLCH_02Model.SanPham" Multiplicity="1" Role="SanPham" />
+    <End Type="DB_QLCH_02Model.CTHoaDon" Multiplicity="*" Role="CTHoaDon" />
+    <ReferentialConstraint>
+      <Principal Role="SanPham">
+        <PropertyRef Name="MaSP" />
+      </Principal>
+      <Dependent Role="CTHoaDon">
+        <PropertyRef Name="MaSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ddh_MaKH">
+    <End Type="DB_QLCH_02Model.KhachHang" Role="KhachHang" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.DonDatHang" Role="DonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhachHang">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DonDatHang">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ddh_MaNV">
+    <End Type="DB_QLCH_02Model.NhanVien" Role="NhanVien" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.DonDatHang" Role="DonDatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="DonDatHang">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hd_MaDonDat">
+    <End Type="DB_QLCH_02Model.DonDatHang" Role="DonDatHang" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.HoaDon" Role="HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DonDatHang">
+        <PropertyRef Name="MaDonDat" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaDonDat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_hd_MaNV">
+    <End Type="DB_QLCH_02Model.NhanVien" Role="NhanVien" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.HoaDon" Role="HoaDon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="HoaDon">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_nh_MaNCC">
+    <End Type="DB_QLCH_02Model.NhaCungCap" Role="NhaCungCap" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.NhapHang" Role="NhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="NhapHang">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_sp_MaNCC">
+    <End Type="DB_QLCH_02Model.NhaCungCap" Role="NhaCungCap" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.SanPham" Role="SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhaCungCap">
+        <PropertyRef Name="MaNCC" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaNCC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_nv_mpb">
+    <End Type="DB_QLCH_02Model.PhongBan" Role="PhongBan" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.NhanVien" Role="NhanVien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PhongBan">
+        <PropertyRef Name="MaPB" />
+      </Principal>
+      <Dependent Role="NhanVien">
+        <PropertyRef Name="MaPB" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_nh_MaNV">
+    <End Type="DB_QLCH_02Model.NhanVien" Role="NhanVien" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.NhapHang" Role="NhapHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhanVien">
+        <PropertyRef Name="MaNV" />
+      </Principal>
+      <Dependent Role="NhapHang">
+        <PropertyRef Name="MaNV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MaNhom">
+    <End Type="DB_QLCH_02Model.Nhom" Role="Nhom" Multiplicity="1" />
+    <End Type="DB_QLCH_02Model.SanPham" Role="SanPham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhom">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="SanPham">
+        <PropertyRef Name="MaNhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vw_DSCTNhapHang">
+    <Key>
+      <PropertyRef Name="MaNhapHang" />
+      <PropertyRef Name="MaSP" />
+      <PropertyRef Name="TenSanPham" />
+      <PropertyRef Name="SoLuong" />
+      <PropertyRef Name="ThanhTien" />
+    </Key>
+    <Property Name="MaNhapHang" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="MaSP" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TenSanPham" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="ThanhTien" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vw_DSHoaDon">
+    <Key>
+      <PropertyRef Name="MaHoaDon" />
+      <PropertyRef Name="TongTien" />
+      <PropertyRef Name="HoTen" />
+      <PropertyRef Name="MaDonDat" />
+      <PropertyRef Name="HoTenKH" />
+    </Key>
+    <Property Name="MaHoaDon" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="NgayLap" Type="DateTime" Precision="3" />
+    <Property Name="TongTien" Type="Int64" Nullable="false" />
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="MaDonDat" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="HoTenKH" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

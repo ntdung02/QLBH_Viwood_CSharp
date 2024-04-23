@@ -1,0 +1,29 @@
+-----------------HƯỚNG DẪN ĐỒ ÁN HỌC PHẦN LẬP TRÌNH C#----------------
+
+Mã lớp học phần: 2321112005603
+Sinh viên thực hiện 1: Nguyễn Thùy Dung - 2021010122
+Sinh viên thực hiện 2: Lê Thị Hoa - 2021010154
+
+Đề tài: XÂY DỰNG CHƯƠNG TRÌNH QUẢN LÝ BÁN HÀNG NỘI THẤT TẠI CỬA HÀNG VIWOOD
+
+
+[1]. CÁC CÔNG CỤ CÀI ĐẶT:
+- Công cụ cài đặt cơ sở dữ liệu: Microsoft SQL Server 2019  - version 15.0.2000.5 
+
+- Công cụ lập trình: Visual Studio 2019
+
+[2]. THÔNG TIN ĐĂNG NHẬP ỨNG DỤNG
+
+- Tài khoản của Admin
+	Account: ThuyDungQL
+	Password: dung@123456
+
+- Tài khoản của nhân viên bán hàng
+	Account: LyThuNV
+	Password: Thu@456
+
+- Tài khoản của nhân viên kho
+	Account: HoaHoaNV
+	Password: Hoa@123
+
+
